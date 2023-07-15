@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatRoom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .message-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .text-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .text-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .send-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .go-back {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <a href="/mainpage/{{ user }}" class="go-back">Go Back</a>
+    <h1 class="header">{{user}} and {{receiver}} ChatRoom</h1>
+    
+    <div class="message-box">
+        
+        <pre>{{messagepop}}</pre>
+    </div>
+    
+    <form class="text-bar" action="/between2/{{user}}/{{receiver}}" method="post">
+        <input type="text" class="text-input" name="MESSAGE" placeholder="Type your message">
+        <button type="submit" class="send-button">Send</button>
+    </form>
+</body>
+</html>

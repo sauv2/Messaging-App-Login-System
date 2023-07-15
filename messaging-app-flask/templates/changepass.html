@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .text-bar {
+            margin-bottom: 20px;
+        }
+
+        .text-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .update-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .go-back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Update Password</h1>
+        <button class="go-back-button" onclick="window.location.href='/mainpage/{{user}}'">Go Back</button>
+        <form action="/between5/{{user}}" method="post">
+            <p>Update Pass</p>
+            <div class="text-bar">
+                <label for="current-password">Current Password:</label>
+                <input type="password" class="text-input" id="current-password" name="current" required>
+            </div>
+            <div class="text-bar">
+                <label for="new-password">New Password:</label>
+                <input type="password" class="text-input" id="new-password" name="new" required>
+            </div>
+            <button type="submit" class="update-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

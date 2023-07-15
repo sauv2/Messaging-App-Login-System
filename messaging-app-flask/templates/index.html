@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .register-link {
+            margin-top: 10px;
+        }
+
+        .message-pop {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" action="/between" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ username }}" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="{{ password }}" required><br>
+            <span class="message-pop">{{ messagepop }}</span><br>
+            <input type="submit" value="Login">
+        </form>
+        <p class="register-link">Don't have an account? <a href="/register">Register</a></p>
+    </div>
+</body>
+</html>

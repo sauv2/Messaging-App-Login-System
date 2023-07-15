@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deleting Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .text-bar {
+            margin-bottom: 20px;
+        }
+
+        .text-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .delete-button {
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: red;
+        }
+
+        .go-back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deleting Account</h1>
+        <p>Goodbye {{ user }}</p>
+        <form action="/between3/{{ user }}" method="post">
+            <div class="text-bar">
+                <input type="password" class="text-input" name="pass" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="delete-button">Delete Your Account</button>
+        </form>
+        <div class="message">
+            {{ messagepop }}
+        </div>
+        <button class="go-back-button" onclick="window.location.href='/mainpage/{{ user }}'">Go Back</button>
+    </div>
+</body>
+</html>
